@@ -1,0 +1,13 @@
+@synthesis/code-ontology-spec.md | mentions | prefix
+lab.synthesis.authors | hasValue | [[m4rq]]
+lab.synthesis.authors | hasValue | [[spacegoat]]
+lab.synthesis.authors | hasValue | [[tr1p-l3x]]
+lab.synthesis.concludes | hasValue | [[code-ontology-spec]]
+lab.synthesis.evidenceStrength | hasValue | moderate
+lab.synthesis.synthesisStatus | hasValue | draft
+lab.synthesis.synthesizedClaim | hasValue | A small layered RDF 1.2 vocabulary plus alignments to existing standards is sufficient for code knowledge graphs, composes with SCIP, and is implementable today.
+tags | hasValue | code-ontology
+tags | hasValue | draft
+tags | hasValue | rdf
+tags | hasValue | spec
+title | hasValue | The repolex Code Ontology

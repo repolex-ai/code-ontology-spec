@@ -1,0 +1,10 @@
+lab.investigation.contributors | hasValue | [[m4rq]]
+lab.investigation.contributors | hasValue | [[spacegoat]]
+lab.investigation.investigationStatus | hasValue | active
+lab.investigation.lead | hasValue | [[tr1p-l3x]]
+lab.investigation.researchQuestion | hasValue | What does a complete RDF vocabulary for code knowledge graphs look like, and how does it compose with existing formats (SCIP, LSIF, CPG, CodeQL)?
+tags | hasValue | code-ontology
+tags | hasValue | rdf
+tags | hasValue | repolex
+tags | hasValue | spec
+title | hasValue | Defining an RDF code ontology for the AI era
