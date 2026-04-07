@@ -1,2 +1,3 @@
 md.externalLink | hasValue | https://github.com/repolex-ai/git-lex
 md.externalLink | hasValue | https://github.com/repolex-ai/repolex
+md.unresolvedLink | hasValue | experiment/scip-to-repolex.md
