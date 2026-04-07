@@ -1,0 +1,5 @@
+00000000/README.lex.md | @README.lex.md | mentions | agentname
+00000000/README.lex.md | @README.lex.md | mentions | mentions
+00000000/README.lex.md | README.lex.md | linksTo | document-title
+00000000/README.lex.md | README.lex.md | linksTo | wikilinks
+00000000/README.lex.md.md | md.externalLink | hasValue | https://github.com/repolex-ai/git-lex
