@@ -1,0 +1,6 @@
+# git-lex identity — do not edit
+# This file anchors this repo's cryptographic identity.
+# The SHA below is the first commit hash — immutable and unique.
+identity: 503b507509e86bfeaf7ab5fc5eb32339643749bc
+created: 2026-04-07T08:04:11Z
+kit: lab
