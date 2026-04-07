@@ -1,0 +1,2 @@
+# git-lex: semantic diff/merge for knowledge graph files
+.lex/**/*.nq diff=lex merge=lex

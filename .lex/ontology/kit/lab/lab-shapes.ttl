@@ -1,0 +1,8 @@
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix lab: <https://repolex.ai/ontology/kit/lab/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Auto-generated SHACL shapes from lab ontology.
+# Do not hand-edit — regenerate with: git lex kit update
+
