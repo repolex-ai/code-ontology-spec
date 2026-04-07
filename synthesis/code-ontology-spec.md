@@ -27,12 +27,45 @@ The dominant code-analysis tools today represent code as property graphs (Joern'
 
 ## §1 Motivation
 
-*[TR1P.L3X — to draft]*
+### 1.1 The Property Graph Default
 
-- Why no dominant RDF code ontology exists
-- Why this matters now (AI agents, code memory, federation)
-- What property graphs / SCIP / CodeQL / Glean each get right and wrong
-- The opportunity gap
+When developers reach for a code-as-data tool today, they get a property graph. Joern uses Code Property Graphs (CPG). Sourcegraph SCIP is a Protobuf interchange format that targets property-graph stores. GitHub CodeQL uses a custom datalog-style query language over a custom binary format. Meta's Glean is another custom binary format. Stack Graphs has its own representation. Each tool ships its own schema, its own query language, and its own ingestion pipeline.
+
+This is the world that the semantic web community spent twenty years arguing against, and lost.
+
+### 1.2 What RDF Lost
+
+The RDF stack has clear advantages for code knowledge graphs that the property-graph world has been working around piecemeal:
+
+**Federation.** Property graphs are islands. Joern's CPG cannot be queried alongside CodeQL's database without an ETL pipeline that loses information at each step. RDF was designed for the open-world federation problem from day one — multiple graphs over a SPARQL endpoint, cross-store joins, shared vocabularies. The cost is that the RDF community built the standards before the tooling caught up; the property-graph community built tooling first and is now reinventing federation badly.
+
+**Standardized query.** SPARQL is a W3C recommendation with multiple conforming implementations (Apache Jena, Oxigraph, GraphDB, Stardog, Virtuoso, QLever). Cypher exists but is fragmented across vendors; Neo4j's GQL push has not produced a unified successor. CodeQL, CPGQL, Angle, Glean's query language — each is bespoke. SPARQL is the only mature standardized query language for graph data, and it has been since 2008.
+
+**Shared vocabularies.** PROV-O for provenance. SKOS for tag systems. FaBiO for citations. schema.org for metadata. DCTERMS for licensing. These are mature ontologies that any RDF graph can compose with. Property graphs have no equivalent — every project reinvents its own vocabulary, and the closest thing to a "shared schema" is convention.
+
+**Provenance native.** RDF 1.2 (December 2025 W3C recommendation) introduced triple terms and `rdf:reifies` specifically to attach metadata to individual edges without ugly reification. This is exactly what code analysis needs: a call edge isn't just "A calls B" — it's "A calls B, extracted by tree-sitter v0.25, confidence 1.0, observed at commit abc123, by parser version 0.4." Property graphs can do this with edge properties, but the result is per-implementation; RDF 1.2 makes it standard.
+
+The property-graph world won the tooling war. The RDF stack won the standards war. Code knowledge graphs are a domain where the standards-side should have won the tooling war too — but nobody built the tools.
+
+### 1.3 Why Now
+
+Three things converged in early 2026 that change the calculus:
+
+**1. RDF 1.2 shipped.** Triple terms + `rdf:reifies` are now stable. Apache Jena 6.0.0 (February 2026) and Oxigraph 0.5.x (which removed the experimental `rdf-star` feature flag entirely) both implement RDF 1.2 by default. The version of RDF that handles provenance natively is finally available in mature implementations.
+
+**2. AI agents need persistent code memory.** Every AI coding assistant — Cursor, Continue, Cody, Claude Code, Gemini Code Assist, Codex — has converged on the same architecture: index the codebase, store the index, query at inference time. The index is currently either vector embeddings (lossy, opaque) or a custom property graph (Sourcegraph, Glean). RDF is the right substrate for this and nobody is shipping it. The window for proposing a standard is now, before the property-graph defaults harden.
+
+**3. SHACL 1.2 is becoming an inference engine.** SHACL split into five working drafts (Core, Rules, Node Expressions, SPARQL Extensions, UI) in early 2026. Node Expressions (FPWD 2026-01-08) introduces compositional value computation; Rules introduces forward-chaining inference. Together they turn SHACL from a validator into a declarative rule language for RDF graphs. For code analysis — where most "rules" are currently buried in imperative parser code — this is transformative.
+
+### 1.4 Who This Spec Is For
+
+Three audiences:
+
+1. **Tool implementers** building AI coding assistants who want a standardized substrate for code memory instead of inventing their own format.
+2. **Researchers** studying code as data who want reproducible queries and federated datasets across projects and languages.
+3. **The semantic web community** who want a foothold in the developer-tools world after twenty years of being adjacent to it.
+
+The spec is implemented in [repolex](https://github.com/repolex-ai/repolex) and [git-lex](https://github.com/repolex-ai/git-lex). It is not aspirational — it ships triples today, validates today, queries today. This document captures what we built and why, so others can adopt and federate.
 
 ## §2 Layered Architecture
 

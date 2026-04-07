@@ -1,4 +1,32 @@
 00000000/README.lex.md.md | md.externalLink | hasValue | https://github.com/repolex-ai/git-lex
+00000000/README.md.md | md.externalLink | hasValue | https://github.com/repolex-ai
+00000000/README.md.md | md.externalLink | hasValue | https://github.com/repolex-ai/git-lex
+00000000/README.md.md | md.externalLink | hasValue | https://github.com/repolex-ai/git-lex-kit-lab
+00000000/README.md.md | md.externalLink | hasValue | https://github.com/repolex-ai/repolex
+00000000/synthesis/code-ontology-spec.md.md | md.externalLink | hasValue | https://github.com/repolex-ai/repolex
+1ccd5cb9/investigation/code-ontology-spec.md | lab.investigation.contributors | hasValue | [[m4rq]]
+1ccd5cb9/investigation/code-ontology-spec.md | lab.investigation.contributors | hasValue | [[spacegoat]]
+1ccd5cb9/investigation/code-ontology-spec.md | lab.investigation.investigationStatus | hasValue | active
+1ccd5cb9/investigation/code-ontology-spec.md | lab.investigation.lead | hasValue | [[tr1p-l3x]]
+1ccd5cb9/investigation/code-ontology-spec.md | lab.investigation.researchQuestion | hasValue | What does a complete RDF vocabulary for code knowledge graphs look like, and how does it compose with existing formats (SCIP, LSIF, CPG, CodeQL)?
+1ccd5cb9/investigation/code-ontology-spec.md | tags | hasValue | code-ontology
+1ccd5cb9/investigation/code-ontology-spec.md | tags | hasValue | rdf
+1ccd5cb9/investigation/code-ontology-spec.md | tags | hasValue | repolex
+1ccd5cb9/investigation/code-ontology-spec.md | tags | hasValue | spec
+1ccd5cb9/investigation/code-ontology-spec.md | title | hasValue | Defining an RDF code ontology for the AI era
+635d0b4e/synthesis/code-ontology-spec.md | @synthesis/code-ontology-spec.md | mentions | prefix
+635d0b4e/synthesis/code-ontology-spec.md | lab.synthesis.authors | hasValue | [[m4rq]]
+635d0b4e/synthesis/code-ontology-spec.md | lab.synthesis.authors | hasValue | [[spacegoat]]
+635d0b4e/synthesis/code-ontology-spec.md | lab.synthesis.authors | hasValue | [[tr1p-l3x]]
+635d0b4e/synthesis/code-ontology-spec.md | lab.synthesis.concludes | hasValue | [[code-ontology-spec]]
+635d0b4e/synthesis/code-ontology-spec.md | lab.synthesis.evidenceStrength | hasValue | moderate
+635d0b4e/synthesis/code-ontology-spec.md | lab.synthesis.synthesisStatus | hasValue | draft
+635d0b4e/synthesis/code-ontology-spec.md | lab.synthesis.synthesizedClaim | hasValue | A small layered RDF 1.2 vocabulary plus alignments to existing standards is sufficient for code knowledge graphs, composes with SCIP, and is implementable today.
+635d0b4e/synthesis/code-ontology-spec.md | tags | hasValue | code-ontology
+635d0b4e/synthesis/code-ontology-spec.md | tags | hasValue | draft
+635d0b4e/synthesis/code-ontology-spec.md | tags | hasValue | rdf
+635d0b4e/synthesis/code-ontology-spec.md | tags | hasValue | spec
+635d0b4e/synthesis/code-ontology-spec.md | title | hasValue | The repolex Code Ontology
 7df35bdf/README.lex.md | @README.lex.md | mentions | agentname
 7df35bdf/README.lex.md | @README.lex.md | mentions | mentions
 7df35bdf/README.lex.md | README.lex.md | linksTo | document-title
